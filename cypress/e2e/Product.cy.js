@@ -7,6 +7,7 @@ describe('Product Interactions', () => {
       cy.get('[data-test="shopping-cart-link"]').should('be.visible');
       cy.AddToCart('backpack');
       cy.Cart('backpack');
+      cy.Checkout();
     });
   });
 
@@ -15,7 +16,6 @@ describe('Product Interactions', () => {
       cy.LogIn(users.standard.username, users.standard.password);
       cy.get('[data-test="shopping-cart-link"]').should('be.visible');
       cy.AddToCart('onesie');
-      cy.Cart('onesie');
       cy.RemoveFromCart('onesie');
     });
   });
